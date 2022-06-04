@@ -19,7 +19,11 @@ function clearCalculator() {
 }
 
 function inputDigit(digit) {
-   calculator.displayNumber += digit;
+   if(calculator.displayNumber === '0') {
+       calculator.displayNumber = digit;
+   } else {
+       calculator.displayNumber += digit;
+   }
 }
 
 const buttons = document.querySelectorAll(".button");
@@ -34,13 +38,7 @@ for (let button of buttons) {
    });
 }
 
-function inputDigit(digit) {
-   if(calculator.displayNumber === '0') {
-       calculator.displayNumber = digit;
-   } else {
-       calculator.displayNumber += digit;
-   }
-}
+
 
 button.addEventListener('click', function(event) {
  
