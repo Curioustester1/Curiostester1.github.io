@@ -1,4 +1,4 @@
-//testing doang dekk nih materi agak pusing juga mahamnya meskipun EZ 🗿
+//testing doang nih materi agak pusing juga mahamnya 
 
 const calculator = {
    displayNumber: '0',
@@ -33,6 +33,34 @@ function inverseNumber() {
    calculator.displayNumber = calculator.displayNumber * -1;
 }
 
+function handleOperator(operator) {
+    if (!calculator.waitingForSecondNumber) {
+        calculator.operator = operator;
+        calculator.waitingForSecondNumber = true;
+        calculator.firstNumber = calculator.displayNumber;
+ 
+        // mengatur ulang nilai display number supaya tombol selanjutnya dimulai dari angka pertama lagi
+        calculator.displayNumber = '0';
+    } else {
+        alert('Operator sudah ditetapkan')
+    }
+}
+
+function performCalculation() {
+   if (calculator.firstNumber == null || calculator.operator == null) {
+       alert("Anda belum menetapkan operator");
+       return;
+   }
+ 
+   let result = 0;
+   if (calculator.operator === "+") {
+       result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+   } else {
+       result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
+   }
+ 
+   calculator.displayNumber = result;
+}
 
 const buttons = document.querySelectorAll(".button");
 for (let button of buttons) {
