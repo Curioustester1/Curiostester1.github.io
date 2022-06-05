@@ -65,8 +65,9 @@ function performCalculation() {
        operator: calculator.operator,
        result: result
    }
-
+   putHistory(history);
    calculator.displayNumber = result;
+   renderhistory();
 }
 
 const buttons = document.querySelectorAll(".button");
