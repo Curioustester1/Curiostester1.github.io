@@ -36,9 +36,6 @@ function showHistory() {
 function renderHistory() {
    const historyData = showHistory();
    let historyList = document.querySelector("#historyList");
- 
- 
-   // selalu hapus konten HTML pada elemen historyList agar tidak menampilkan data ganda
    historyList.innerHTML = "";
  
  
