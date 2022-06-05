@@ -26,6 +26,14 @@ function inputDigit(digit) {
    }
 }
 
+function inverseNumber() {
+   if (calculator.displayNumber === '0') {
+       return;
+   }
+   calculator.displayNumber = calculator.displayNumber * -1;
+}
+
+
 const buttons = document.querySelectorAll(".button");
 for (let button of buttons) {
    button.addEventListener('click', function(event) {
